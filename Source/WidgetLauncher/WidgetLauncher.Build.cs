@@ -26,6 +26,8 @@ public class WidgetLauncher : ModuleRules
 			new string[]
 			{
 				"Core",
+				"Blutility",
+				"DeveloperSettings",
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
@@ -38,6 +40,8 @@ public class WidgetLauncher : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
+				"UMG",
+				"UMGEditor",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
