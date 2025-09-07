@@ -16,9 +16,20 @@ struct FWidgetLauncherCategoryInfo
 	UPROPERTY(EditAnywhere, Category="Widget Launcher")
 	FString CategoryName;
 
-	// EditorUtilityWidgetのSoftObjectPath
+	// 表示名
 	UPROPERTY(EditAnywhere, Category="Widget Launcher")
-	TObjectPtr<UEditorUtilityWidgetBlueprint> EditorUtilityWidget;
+	FString DisplayName;
+
+	UPROPERTY(EditAnywhere, Category="Widget Launcher")
+	TSoftObjectPtr<UEditorUtilityWidgetBlueprint> EditorUtilityWidget;
+};
+
+UENUM(BlueprintType)
+enum class EWidgetLauncherLocation : uint8
+{
+	MenuBar,
+	ToolBar,
+	StatusBar
 };
 
 UCLASS(config=EditorPerProjectUserSettings, defaultconfig, meta=(DisplayName="Widget Launcher"))
@@ -27,6 +38,17 @@ class WIDGETLAUNCHER_API UWidgetLauncherSettings : public UDeveloperSettings
 	GENERATED_BODY()
 
 public:
+	virtual FName GetCategoryName() const override
+	{
+		return TEXT("Plugins");
+	}
+
+#if WITH_EDITOR
+	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
+	virtual FText GetSectionText() const override;
+	virtual FText GetSectionDescription() const override;
+#endif
+	
 	// カテゴリとSoftObjectPathの配列
 	UPROPERTY(EditAnywhere, config, Category="Widget Launcher")
 	TArray<FWidgetLauncherCategoryInfo> WidgetInfos;
@@ -34,16 +56,6 @@ public:
 	UPROPERTY(EditAnywhere, config, Category="Widget Launcher")
 	bool bIsEnabled = true;
 	
-	// メニューバーに表示
-	UPROPERTY(EditAnywhere, config, Category="Widget Launcher", meta=(EditCondition="bIsEnabled"))
-	bool bShowInMenuBar = true;
-
-	// ツールバーに表示
-	UPROPERTY(EditAnywhere, config, Category="Widget Launcher", meta=(EditCondition="bIsEnabled"))
-	bool bShowInToolBar = true;
-
-	// ステータスバーに表示
-	UPROPERTY(EditAnywhere, config, Category="Widget Launcher", meta=(EditCondition="bIsEnabled"))
-	bool bShowInStatusBar = false;
-	
+	UPROPERTY(EditAnywhere, config, Category="Widget Launcher")
+	EWidgetLauncherLocation WidgetLauncherLocation = EWidgetLauncherLocation::ToolBar;
 };
