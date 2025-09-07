@@ -1,4 +1,6 @@
-﻿#pragma once
+﻿// Copyright (c) 2025 Keita Nakamura
+
+#pragma once
 
 #include "CoreMinimal.h"
 #include "Modules/ModuleManager.h"

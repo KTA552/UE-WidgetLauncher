@@ -1,4 +1,6 @@
-﻿#include "WidgetLauncher.h"
+﻿// Copyright (c) 2025 Keita Nakamura
+
+#include "WidgetLauncher.h"
 #include "WidgetLauncherUIManager.h"
 
 #define LOCTEXT_NAMESPACE "FWidgetLauncherModule"

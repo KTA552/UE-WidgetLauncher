@@ -1,4 +1,6 @@
-﻿#include "WidgetLauncherUIManager.h"
+﻿// Copyright (c) 2025 Keita Nakamura
+
+#include "WidgetLauncherUIManager.h"
 #include "WidgetLauncherSettings.h"
 #include "Framework/MultiBox/MultiBoxBuilder.h"
 #include "EditorUtilitySubsystem.h"
