@@ -1,20 +1,34 @@
-﻿// Copyright Epic Games, Inc. All Rights Reserved.
-
-#include "WidgetLauncher.h"
+﻿#include "WidgetLauncher.h"
+#include "WidgetLauncherUIManager.h"
 
 #define LOCTEXT_NAMESPACE "FWidgetLauncherModule"
 
 void FWidgetLauncherModule::StartupModule()
 {
-	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
+	// UIManagerを初期化
+	UIManager = MakeShareable(new FWidgetLauncherUIManager());
+	UIManager->Initialize();
 }
 
 void FWidgetLauncherModule::ShutdownModule()
 {
-	// This function may be called during shutdown to clean up your module.  For modules that support dynamic reloading,
-	// we call this function before unloading the module.
+	// UIManagerをシャットダウン
+	if (UIManager.IsValid())
+	{
+		UIManager->Shutdown();
+		UIManager.Reset();
+	}
+}
+
+void FWidgetLauncherModule::RebuildMenus()
+{
+	if (UIManager.IsValid())
+	{
+		UIManager->Unregister();
+		UIManager->RegisterMenu();
+	}
 }
 
 #undef LOCTEXT_NAMESPACE
-	
+
 IMPLEMENT_MODULE(FWidgetLauncherModule, WidgetLauncher)
