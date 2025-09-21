@@ -128,9 +128,16 @@ TSharedRef<SWidget> FWidgetLauncherUIManager::GenerateWidgetLauncherEntry()
 	// 設定を再読み込み
 	RefreshAvailableWidgets();
 	
-	FMenuBuilder MenuBuilder(true, nullptr);
+	FMenuBuilder MenuBuilder(
+		true,
+		nullptr,
+		nullptr,
+		false,
+		&FAppStyle::Get(),
+		true
+	);	
 	
-	// カテゴリ別にメニューを構築（検索なし）
+	// カテゴリ別にメニューを構築
 	BuildCategoryMenus(MenuBuilder);
 	
 	return MenuBuilder.MakeWidget();
