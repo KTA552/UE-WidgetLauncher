@@ -1,3 +1,6 @@
+![GitHub](https://img.shields.io/github/license/KTA552/UE-WidgetLauncher)
+![](https://img.shields.io/github/v/tag/KTA552/UE-WidgetLauncher?label=version)
+
 # Widget Launcher
 https://github.com/user-attachments/assets/5d76dc3f-a9d6-44a6-8e54-4bc8605bd075
 
