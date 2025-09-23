@@ -1,4 +1,6 @@
-﻿using UnrealBuildTool;
+﻿// Copyright (c) 2025 Keita Nakamura
+
+using UnrealBuildTool;
 
 public class WidgetLauncher : ModuleRules
 {
