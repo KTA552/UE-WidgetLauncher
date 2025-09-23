@@ -16,6 +16,7 @@ https://github.com/user-attachments/assets/5d76dc3f-a9d6-44a6-8e54-4bc8605bd075
 5. Restart the editor if prompted.
 
 ## Usage
+<img width="378" height="268" alt="image" src="https://github.com/user-attachments/assets/db1fdade-09a2-4933-8f83-c524f5bade99" />
 
 A "Launcher" button will appear in the toolbar or status bar, depending on your settings.  
 Click the button to open a list of registered Editor Utility Widgets (EUW).  
