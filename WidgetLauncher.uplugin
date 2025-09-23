@@ -2,12 +2,12 @@
 	"FileVersion": 3,
 	"Version": 1,
 	"VersionName": "1.0",
-	"FriendlyName": "Widget Launcher",
-	"Description": "Editor Utility Widget launcher category functionality",
+	"FriendlyName": "EditorUtilityWidget-Launcher",
+	"Description": "EditorUtilityWidget launch quickly",
 	"Category": "Editor",
-	"CreatedBy": "Your Name",
-	"CreatedByURL": "",
-	"DocsURL": "",
+	"CreatedBy": "Keita Nakamura",
+	"CreatedByURL": "https://github.com/KTA552/UE-WidgetLauncher",
+	"DocsURL": "https://github.com/KTA552/UE-WidgetLauncher/blob/main/README.md",
 	"MarketplaceURL": "",
 	"SupportURL": "",
 	"CanContainContent": false,
@@ -18,7 +18,8 @@
 		{
 			"Name": "WidgetLauncher",
 			"Type": "Editor",
-			"LoadingPhase": "PostEngineInit"
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [ "Win64", "Mac", "Linux" ]
 		}
 	]
 }
